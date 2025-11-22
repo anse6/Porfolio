@@ -2,11 +2,11 @@ import { Routes, Route, Link } from "react-router-dom";
 import { Menu, X, Github, Linkedin, Twitter } from "lucide-react";
 import { useState } from "react";
 import image1 from "./assets/anse.jpeg";
+import ScrollToTop from "./ScrollToTop";
 
-// Toutes les images
 const IMAGES = {
   logo: "https://wpvc-images.s3.us-east-1.amazonaws.com/images/1453328/img/tchio_anse_vernel_portfolio_logo.png",
-  portrait:  image1 ,
+  portrait: image1,
   hero: "https://wpvc-images.s3.us-east-1.amazonaws.com/images/1453328/img/hero_background_developer_workspace.png",
   map: "https://wpvc-images.s3.us-east-1.amazonaws.com/images/1453328/img/map_location_placeholder.png",
   projects: [
@@ -66,7 +66,7 @@ const projects = [
     desc: "Outil de conformité bancaire et protection données",
     img: 7,
   },
-  
+
   {
     title: "HotelRevolution Pro",
     desc: "Version premium avec analytics intégrés",
@@ -77,7 +77,6 @@ const projects = [
     desc: "Suite complète pour chaînes hôtelières",
     img: 10,
   },
-  
 ];
 
 export default function App() {
@@ -221,6 +220,7 @@ export default function App() {
 
 const Home = () => (
   <>
+    <ScrollToTop />
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <img
@@ -311,7 +311,6 @@ const Home = () => (
                   </div>
                 </div>
 
-                
                 <h3 className="text-3xl font-bold mb-6 group-hover:text-primary transition-colors duration-500">
                   {skill.title}
                 </h3>
@@ -388,7 +387,7 @@ const Home = () => (
           <div className="absolute -inset-1 bg-gradient-to-r from-primary  to-primary rounded-[2.5rem] opacity-75 blur-2xl animate-pulse"></div>
 
           {/* Card principale */}
-          <div className="relative glass-effect p-16 md:p-20 rounded-[2.5rem] border-2 border-primary/20 shadow-2xl">
+          <div className="relative glass-effect p-16 md:p-20 rounded-[2.5rem] border-2 border-white shadow-2xl">
             {/* Badge en haut */}
             <div className="inline-flex items-center gap-3 glass-effect px-6 py-3 rounded-full mb-8 border border-primary/30 animate-fade-in-up opacity-0">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse shadow-lg shadow-green-500/50"></div>
@@ -410,15 +409,15 @@ const Home = () => (
               qui dépasse vos attentes
             </p>
             {/* Boutons d'action */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center animate-fade-in-up animation-delay-300 opacity-0">
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center animate-fade-in-up animation-delay-300 opacity-0 w-full px-4 sm:px-0">
               <Link
                 to="/contact"
-                className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-primary to-purple-600 px-12 py-6 rounded-2xl text-white font-bold text-xl shadow-2xl shadow-primary/30 hover:shadow-3xl hover:shadow-primary/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden"
+                className="group relative inline-flex items-center justify-center gap-2 sm:gap-3 bg-gradient-to-r from-primary to-purple-600 px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-xl sm:rounded-2xl text-white font-bold text-base sm:text-lg md:text-xl shadow-2xl shadow-primary/30 hover:shadow-3xl hover:shadow-primary/50 hover:-translate-y-2 transition-all duration-500 overflow-hidden w-full sm:w-auto"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
                 <span className="relative">Me contacter maintenant</span>
                 <svg
-                  className="relative w-6 h-6 group-hover:translate-x-2 transition-transform duration-500"
+                  className="relative w-5 h-5 sm:w-6 sm:h-6 group-hover:translate-x-2 transition-transform duration-500"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -434,11 +433,11 @@ const Home = () => (
 
               <Link
                 to="/portfolio"
-                className="inline-flex items-center justify-center gap-3 glass-effect px-12 py-6 rounded-2xl font-bold text-xl border-2 border-primary/30 hover:border-primary hover:bg-primary/5 hover:-translate-y-2 transition-all duration-500"
+                className="inline-flex items-center justify-center gap-2 sm:gap-3 glass-effect px-6 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg md:text-xl border-2 border-primary/30 hover:border-primary hover:bg-primary/5 hover:-translate-y-2 transition-all duration-500 w-full sm:w-auto"
               >
                 Voir mes réalisations
                 <svg
-                  className="w-6 h-6"
+                  className="w-5 h-5 sm:w-6 sm:h-6"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -750,16 +749,16 @@ const About = () => (
 
           {/* CTA Buttons */}
           <div
-            className="flex flex-wrap gap-4 pt-8 animate-fade-in-up opacity-0"
+            className="flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 pt-8 animate-fade-in-up opacity-0 w-full"
             style={{ animationDelay: "1000ms" }}
           >
             <Link
               to="/portfolio"
-              className="group inline-flex items-center gap-3 bg-purple-600 px-8 py-4 rounded-xl text-white font-bold text-lg shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-500"
+              className="group inline-flex items-center justify-center gap-2 sm:gap-3 bg-purple-600 px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-white font-bold text-base sm:text-lg shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/50 hover:-translate-y-1 transition-all duration-500 w-full sm:w-auto"
             >
               <span>Voir mes projets</span>
               <svg
-                className="w-5 h-5 group-hover:translate-x-2 transition-transform duration-500"
+                className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-2 transition-transform duration-500"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -772,14 +771,13 @@ const About = () => (
                 />
               </svg>
             </Link>
-
             <Link
               to="/contact"
-              className="inline-flex items-center gap-3 glass-effect px-8 py-4 rounded-xl font-bold text-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/5 hover:-translate-y-1 transition-all duration-500"
+              className="inline-flex items-center justify-center gap-2 sm:gap-3 glass-effect px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold text-base sm:text-lg border-2 border-primary/30 hover:border-primary hover:bg-primary/5 hover:-translate-y-1 transition-all duration-500 w-full sm:w-auto"
             >
               <span>Me contacter</span>
               <svg
-                className="w-5 h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -906,7 +904,7 @@ const Contact = () => (
             {/* Bordure animée gradient */}
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary rounded-[2rem] opacity-0 group-hover:opacity-75 blur-xl transition-all duration-700"></div>
 
-            <div className="relative glass-effect p-10 rounded-[2rem] border-2 border-primary/10 group-hover:border-primary/30 transition-all duration-700 shadow-2xl">
+            <div className="relative glass-effect p-10 rounded-[2rem] border-2 border-white group-hover:border-white/70 transition-all duration-700 shadow-2xl">
               <div className="flex items-center gap-4 mb-10">
                 <div className="w-14 h-14 bg-gradient-to-br from-primary to-purple-600 rounded-2xl flex items-center justify-center shadow-xl">
                   <svg
@@ -1141,15 +1139,14 @@ const Contact = () => (
 
         {/* Carte de localisation - À droite */}
         <div className="space-y-8 animate-fade-in-up animation-delay-500 opacity-0">
-          <div className="group relative overflow-hidden rounded-[2rem] shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-2">
+          <div className="group relative overflow-hidden rounded-[2rem] border-2 border-white shadow-2xl hover:shadow-3xl transition-all duration-700 hover:-translate-y-2">
             <div className="absolute -inset-1 bg-gradient-to-r from-primary to-primary opacity-0 group-hover:opacity-75 blur-xl transition-all duration-700"></div>
-            <div className="relative border-4 border-primary/20 group-hover:border-primary/40 rounded-[2rem] overflow-hidden transition-all duration-700">
+            {/* <div className="relative border- shadow-2xl border-white border-primary/20 group-hover:border-primary/40 rounded-[2rem] overflow-hidden transition-all duration-700">
               <img
                 src={IMAGES.map}
                 alt="Localisation Yaoundé Cameroun"
                 className="w-full h-full min-h-[600px] object-cover group-hover:scale-110 transition-transform duration-1000"
-              />
-              {/* Badge sur la carte */}
+              
               <div className="absolute bottom-6 left-6 right-6 glass-effect p-5 rounded-2xl border border-white/20 backdrop-blur-md">
                 <div className="flex items-center gap-4">
                   <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse shadow-lg shadow-red-500/50"></div>
@@ -1163,11 +1160,11 @@ const Contact = () => (
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Call to action supplémentaire */}
-          <div className="glass-effect p-8 rounded-[2rem] border-2 border-primary/10 shadow-xl text-center">
+          <div className="glass-effect p-8 rounded-[2rem] shadow-2xl border-1 border-white border-primary/10 shadow-xl text-center">
             <div className="mb-6">
               <h4 className="text-2xl font-bold mb-3">Prêt à démarrer ?</h4>
               <p className="text-muted-foreground">
